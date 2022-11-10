@@ -1,0 +1,88 @@
+:root{
+    --main-color: #0088ff;
+
+}
+
+body{
+    font-family: 'Note Sans KR', sans-serif;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 16px 32px;
+    box-sizing: border-box;
+}
+
+.header-inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+h1{
+    width: 112px;
+    position: relative;
+}
+
+.hidden{
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    top: 50%;
+}
+
+h1 > a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.hamberger{
+    width: 32px;
+    height: 32px;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+}
+
+.hamberger::before , .hamberger::after{
+    display: block;
+    content: '';
+    width: 80%;
+    height: 3px;
+    background-color: var(--main-color);
+}
+
+.hamberger::after{
+    margin-left: auto;
+}
+
+#cover{
+    width: 100%;
+    height: 100vh;
+    /* vh는 전체 화면을 차지한다 */
+    background-image: url();
+    background-position: 30% center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cover > h2 {
+    text-align: center;
+    font-size: 56px;
+    color: white;
+    font-weight: 900;
+    line-height: 130%;
+}
+
+
