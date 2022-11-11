@@ -1,6 +1,11 @@
 :root{
     --main-color: #0088ff;
-
+    --main-black1: #374553;
+    --paragraph-font-color: #AAAAAA;
+    --footer-backgroundcolor: #f7f8f9;
+    --footer: #28323c;
+    --footer-font-color: #c5c8ce;
+    --footer-font-color2: #646f7c;
 }
 
 body{
@@ -70,7 +75,7 @@ h1 > a {
     width: 100%;
     height: 100vh;
     /* vh는 전체 화면을 차지한다 */
-    background-image: url();
+    background-image: url(../img/main_visual_fullscreen.jpg);
     background-position: 30% center;
     display: flex;
     align-items: center;
@@ -85,4 +90,135 @@ h1 > a {
     line-height: 130%;
 }
 
+#advantages-container{
+    /* magin을 넣으면 마진 넣은곳에 배경이 안들어갈 수 있음
+    padding으로 넣을것을 추천 */
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+}
 
+.advantange{
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 160px;
+}
+
+.advantange > h2 {
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--main-black1);
+    margin-bottom: 32px;
+    display: flex;
+    /* baseline은 글자의 베이스라인임  */
+    align-items: baseline;
+    gap: 2px;
+}
+
+.advantange > h2::after{
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    
+}
+
+.advantange > p {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--paragraph-font-color);
+    margin-bottom: 48px;
+    line-height: 150%;
+}
+
+.advantange:last-child{
+    margin-bottom: 0;
+}
+
+#start-together{
+    height: 424px;
+    background-color: var(--footer-backgroundcolor);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 38px;
+    color: var(--paragraph-font-color);
+    font-weight: 600;
+    line-height: 150%;
+    overflow: hidden;
+}
+
+.point-blue{
+    color: var(--main-color);
+}
+
+.count-up{
+    font-weight: 800;
+}
+
+.incline{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(80%) skewX(-30deg);
+    background-color: var(--main-color);
+}
+
+footer{
+    background-color: var(--footer);
+    padding: 40px 16px 100px;
+    color: var(--footer-font-color2);
+
+}
+
+.footer-container{
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+footer nav{
+    display: flex;
+    gap: 24px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    /* 화면 줄어들 때 글자가 내려가지 않도록 설정 한 것
+    문장 단위로 내려가도록 설정 */
+}
+
+footer a {
+    color: var(--footer-font-color);
+    text-decoration: none;
+}
+
+.sns-container{
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+
+}
+
+.information{
+    display: flex;
+    font-size: 13px;
+    line-height: 200%;
+}
+
+.information > div{
+    flex-basis: 50%;
+}
+
+.information dl{
+    display: flex;
+}
+
+.imptrtant-impormation{
+    color: #fff;
+}
+
+.biz-info{
+    text-decoration: underline;
+}
