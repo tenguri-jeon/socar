@@ -12,6 +12,17 @@ body{
     font-family: 'Note Sans KR', sans-serif;
 }
 
+/* 초기화 시켜주는 것임. a의 크기가 부모의 크기만큼 늘어나면서
+부모를 누르면 커지게됨 */
+.unit-link{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
 header{
     position: fixed;
     width: 100%;
@@ -23,6 +34,26 @@ header{
 .header-inner{
     display: flex;
     justify-content: space-between;
+}
+
+header.scrolled{
+    background-color: #ffffffaa;
+}
+
+header.scrolled h1 > img {
+    background-color: var(--main-color);
+}
+
+.hide-header{
+    transform: translateY(-100%);
+}
+
+h1 > svg{
+    fill:#fff;
+}
+
+header.scrolled .hamberger::before , .hamberger::after{
+    background-color: var(--main-color);
 }
 
 h1{
@@ -64,7 +95,7 @@ h1 > a {
     content: '';
     width: 80%;
     height: 3px;
-    background-color: var(--main-color);
+    background-color: white;
 }
 
 .hamberger::after{
@@ -221,4 +252,73 @@ footer a {
 
 .biz-info{
     text-decoration: underline;
+}
+
+.app-icon{
+    width: 60px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border-radius: 4px;
+    overflow: hidden;
+    /* box-shadow x축 y축 블러 색상 4가지 속성 들어가야함 */
+    box-shadow: 0px 2px 4px rgb(46, 46, 46);
+}
+
+#app-download > p {
+    display: flex;
+    z-index: 1;
+    color: white;
+    font-size: 20px;
+}
+
+#app-download > p::after{
+    display: block;
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image:url(../img/appdownload.svg);
+}
+
+#app-download{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    width: 360px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+#app-download > .incline{
+    transform: translateX(24px) skewX(-30deg);
+   
+}
+
+@media screen and (max-width : 800px) {
+    #advatanges-container{
+        padding: 80px 20px;
+    }
+    
+    .incline {
+        transform: translateX(86%) skewX(-30deg);
+    }
+
+    #start-together{
+        font-size: 24px;
+        height: 300px;
+    }
+
+    #app-download{
+        width: 96vw;
+        height: 60px;
+    }
+
+    #app-download > .app-icon {
+        width: 40px;
+    }
 }
