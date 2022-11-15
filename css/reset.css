@@ -49,4 +49,5 @@ table {
 img{
 	display: block;
 	width: 100%;
+	/* inblock 속성이기 때문에 block을 먼저 준다. */
 }
